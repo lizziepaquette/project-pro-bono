@@ -1,0 +1,56 @@
+/*
+Theme Name: Magnus PPB Child
+Description: Child of PPB Magnus with support for displaying listings
+Author: Rahul Gosain
+Version: 0.1
+Template: magnus
+*/
+
+@import url('../magnus/style.css');
+
+body {
+	background: #EDE6E3;
+}
+
+#listing {
+	margin: 0% 10%;
+}
+
+#listing > h1 {
+	text-align: center;
+	font-family: "proxima-nova", sans-serif;
+    font-weight: bold;
+	font-size: 3em;
+	margin: 0em;
+}
+
+.org {
+	display: flex;
+	align-items: center;
+}
+
+.org-content > *, 
+.org-description > * {
+    margin: 2px;
+}
+
+.org-thumb {	
+	min-height: 180px;
+	min-width: 180px;
+	max-height: 180px;
+	max-width: 180px;
+	padding: 10px;
+}
+
+.org-skill-term {
+	color: white;
+	background-color: #337ab7;
+	font-size: 90%;
+	margin: 2px;
+	padding: 3px 6px;
+}
+ 
+/* Colors for skill time badges */
+.time-high  { background-color: #5cb85c; }
+.time-medium { background-color: #337ab7; }
+.time-low   { background-color: #f0ad4e; }
