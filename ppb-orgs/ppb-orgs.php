@@ -5,6 +5,11 @@
  * Version: 0.1
  * Author: Rahul Gosain
  * License: UNLICENSED
+ *
+ * This plugin adds an "Organization" post types and 3 new taxonomies to
+ * categorize them: "State", "Issue" (the organization's issue focus) and 
+ * "Skill" (skills they need from volunteers). It also creates a meta box for 
+ * entering a "Learn More" link that a template can display.
  */
 
 add_action('init', 'register_organization_post_type');
