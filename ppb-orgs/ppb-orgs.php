@@ -7,8 +7,8 @@
  * License: UNLICENSED
  *
  * This plugin adds an "Organization" post types and 3 new taxonomies to
- * categorize them: "State", "Issue" (the organization's issue focus) and 
- * "Skill" (skills they need from volunteers). It also creates a meta box for 
+ * categorize them: "State", "Issue" (the organization's issue focus) and
+ * "Skill" (skills they need from volunteers). It also creates a meta box for
  * entering a "Learn More" link that a template can display.
  */
 
@@ -88,7 +88,7 @@ function my_flush_rewrite() {
 
 add_action('add_meta_boxes', 'add_learn_more_meta_box');
 function add_learn_more_meta_box() {
-    add_meta_box('learn_more_url_meta_box', 'Learn More URL', 
+    add_meta_box('learn_more_url_meta_box', 'Learn More URL',
         'build_learn_more_meta_box', 'organization', 'normal', 'high');
 }
 
@@ -108,7 +108,7 @@ function save_learn_more_meta_box($post_id) {
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
     // Don't save without valid nonce
     if (!isset($_POST['meta_box_nonce'])) return;
-    if (!wp_verify_nonce( $_POST['meta_box_nonce'], 'learn_more_meta_box_nonce')) 
+    if (!wp_verify_nonce( $_POST['meta_box_nonce'], 'learn_more_meta_box_nonce'))
         return;
     // Don't save if the user doesn't have edit permissions
     if (!current_user_can('edit_post', $post_id)) return;
