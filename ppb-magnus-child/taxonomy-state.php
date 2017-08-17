@@ -10,6 +10,7 @@
  */
 
 get_header(); ?>
+<?php wp_head(); ?>
 
 <?php
 $groups = array();
@@ -78,6 +79,8 @@ foreach (get_terms('issue') as $term)  {
     <?php endforeach; ?>
     <?php endforeach; ?>
 </div>
+
+<?php wp_footer(); ?>
 
 <?php
 // $skill_term names are of the form "{SkillName}[ :: {Short,Medium,Long}]"

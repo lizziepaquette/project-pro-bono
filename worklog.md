@@ -12,3 +12,4 @@ author: Rahul Gosain
 | 2017-08-07 | 180           | Organization listing plugin pt. 2
 | 2017-08-08 | 60            | Organization listing plugin pt. 3
 | 2017-08-17 | 30            | Restore state-names-on-hover to the frontpage map
+| 2017-08-17 | 25            | Fix admin bar/top bar on state pages
