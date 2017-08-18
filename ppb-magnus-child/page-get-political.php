@@ -9,11 +9,10 @@
 get_header();
 ?>
 
-<h1> Get Political </h1>
-
 <section id="content" class="site-content">
     <div id="primary" class="content-area">
-        <div id="political-page-content">
+        <h1> Get Political </h1>
+		<div id="political-page-content">
             <?php
             while(have_posts()) {
                 the_post();
