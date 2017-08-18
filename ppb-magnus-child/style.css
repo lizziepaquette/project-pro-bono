@@ -1,6 +1,7 @@
 /*
 Theme Name: Magnus PPB Child
-Description: Child of PPB Magnus with support for displaying listings
+Description: Child of PPB Magnus with support for displaying listings and a
+custom "Get Political Page"
 Author: Rahul Gosain
 Version: 0.1
 Template: magnus
@@ -16,12 +17,16 @@ body {
 	margin: 0% 10%;
 }
 
-#listing > h1 {
+h1 {
 	text-align: center;
 	font-family: "proxima-nova", sans-serif;
     font-weight: bold;
 	font-size: 3em;
 	margin: 0em;
+}
+
+h2 {
+	font-size: 2em;
 }
 
 .org {

@@ -1,13 +1,12 @@
 <?php
 /**
- * Template for displaying a state listing of organizations, grouiped by what
+ * Template for displaying a state listing of organizations, grouped by what
  * they do (their focus) with their description and the skills they want of
  * volunteers (their skills).
  */
 
-get_header(); ?>
+get_header();
 
-<?php
 $groups = array();
 foreach (get_terms('issue') as $term)  {
     $groups[$term->name] = get_posts(array(
@@ -35,7 +34,8 @@ foreach (get_terms('issue') as $term)  {
     <div id="selectors"></div>
 
     <?php
-    foreach($groups as $term=>$orgs) {
+    foreach($groups as $issue=>$orgs) {
+        if ($issue == 'Political') continue;
         foreach($orgs as $org) {
             set_query_var('org', $org);
             get_template_part('partials/org');
