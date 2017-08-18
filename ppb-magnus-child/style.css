@@ -57,6 +57,20 @@ h2 {
 }
 
 /* Colors for skill time badges */
+.time-high::before,
+.time-medium::before,
+.time-low::before {
+	content: "";
+	background: url(./lib/clock-o.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 1.25em;
+	width: 1.25em;
+	margin-right: 6px;
+	vertical-align: -18%;
+}
+
 .time-high  { background-color: #5cb85c; }
 .time-medium { background-color: #337ab7; }
 .time-low   { background-color: #f0ad4e; }
