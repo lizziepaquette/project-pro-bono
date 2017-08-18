@@ -1,12 +1,12 @@
-<?php 
+<?php
 /**
  * Template for the "Get Political" page, with the header content and
  * a listing of political organizations using the orgs.php partial.
  *
  * Template Name: Get Political
  */
- 
-get_header(); 
+
+get_header();
 ?>
 
 <h1> Get Political </h1>
@@ -14,7 +14,7 @@ get_header();
 <section id="content" class="site-content">
     <div id="primary" class="content-area">
         <div id="political-page-content">
-            <?php 
+            <?php
             while(have_posts()) {
                 the_post();
                 the_content();
@@ -36,6 +36,7 @@ get_header();
 
             foreach($political_orgs as $org) {
                 set_query_var('org', $org);
+                set_query_var('hide_skills', true);
                 get_template_part('partials/org');
             }
             ?>

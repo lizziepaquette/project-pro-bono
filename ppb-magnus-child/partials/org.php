@@ -1,4 +1,8 @@
-<?php $org = get_query_var('org'); ?>
+<?php
+$org = get_query_var('org');
+// null, so falsy, if absent
+$hide_skills = get_query_var('hide_skills');
+?>
 
 <div class="org">
     <div class="org-thumb">
@@ -30,10 +34,12 @@
             <?php
             $skill_terms = wp_get_post_terms($org->ID, 'skill',
                 array('orderby' => 'name'));
-            
-            foreach($skill_terms as $skill_term) {
-                set_query_var('skill_term', $skill_term);
-                get_template_part('partials/skill');
+
+            if (!$hide_skills) {
+                foreach($skill_terms as $skill_term) {
+                    set_query_var('skill_term', $skill_term);
+                    get_template_part('partials/skill');
+                }
             }
             ?>
         </div>
