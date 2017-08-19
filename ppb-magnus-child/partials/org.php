@@ -21,7 +21,7 @@ $hide_skills = get_query_var('hide_skills');
             $content = apply_filters('the_content', $org->post_content);
             $url = get_post_meta($org->ID, 'learn_more_url', true);
             if ($url) {
-                $content .= ' <a href=' . $url . '> Learn more. </a>';
+                $content .= " <a target='_blank' href={$url}>Learn more. </a>";
             }
 
             echo '<p>' . $content . '</p>';
