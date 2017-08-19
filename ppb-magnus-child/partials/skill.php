@@ -7,7 +7,9 @@ $components = explode(' :: ', $skill_term->name);
 ?>
 
 <?php if (count($components) == 1): ?>
-    <span class="org-skill-badge"> <?= $components[0]; ?> </span>
+    <span class="org-skill-wrapper">
+        <span class="org-skill-badge"> <?= $components[0]; ?> </span>
+    </span>
 <?php else: ?>
     <span class="org-skill-wrapper">
         <?php $time = strtolower($components[1]); ?>
