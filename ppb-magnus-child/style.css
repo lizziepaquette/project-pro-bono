@@ -10,7 +10,7 @@ Template: magnus
 @import url('../magnus/style.css');
 
 body {
-	background: #EDE6E3;
+    background: #EDE6E3;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -45,11 +45,11 @@ h3, h4, h5, h6 {
 }
 
 .org-thumb {
-	min-height: 180px;
-	min-width: 180px;
-	max-height: 180px;
-	max-width: 180px;
-	padding: 10px;
+    min-height: 180px;
+    min-width: 180px;
+    max-height: 180px;
+    max-width: 180px;
+    padding: 10px;
 }
 
 .org-skill-row,

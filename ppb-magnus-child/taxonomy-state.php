@@ -18,13 +18,13 @@ foreach (get_terms('issue') as $term)  {
             'relation'      => 'AND',
             array(
                 'taxonomy'  => 'issue',
-			    'field'     => 'name',
-			    'terms'     => $term->name
-		    ),
+                'field'     => 'name',
+                'terms'     => $term->name
+            ),
             array(
                 'taxonomy'  => 'state',
-			    'field'     => 'name',
-			    'terms'     => get_queried_object()->name
+                'field'     => 'name',
+                'terms'     => get_queried_object()->name
             )
         ),
     ));
