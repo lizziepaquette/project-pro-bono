@@ -48,29 +48,33 @@ h2 {
 	padding: 10px;
 }
 
-.org-skill-term {
-	color: white;
-	background-color: #337ab7;
-	font-size: 90%;
-	margin: 2px;
-	padding: 3px 6px;
+.org-skill-row,
+.org-skill-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+ }
+
+.org-skill-badge {
+    color: white;
+    background-color: #57b1f9;
+    padding: 0 .5em;
 }
 
-/* Colors for skill time badges */
-.time-high::before,
-.time-medium::before,
-.time-low::before {
-	content: "";
-	background: url(./lib/clock-o.svg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	display: inline-block;
-	height: 1.25em;
-	width: 1.25em;
-	margin-right: 6px;
-	vertical-align: -18%;
+.org-skill-clock {
+    display: flex;
+    align-items: center;
+    margin: 0 3px;
 }
 
-.time-high  { background-color: #5cb85c; }
-.time-medium { background-color: #337ab7; }
-.time-low   { background-color: #f0ad4e; }
+.org-skill-clock > svg {
+    height: 1.2em;
+    width: 1.2em;
+    display: inline-block;
+}
+
+.clock-high path { fill: #ec7975; }
+.clock-medium path { fill: #e3bb76; }
+.clock-low path { fill: #7cc065 ; }
