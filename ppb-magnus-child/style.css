@@ -13,26 +13,30 @@ body {
 	background: #EDE6E3;
 }
 
-#listing {
-	margin: 0% 10%;
+h1, h2, h3, h4, h5, h6 {
+    font-family: "proxima-nova", sans-serif;
+    font-weight: bold;
+    margin: .5em;
 }
 
 h1 {
-	text-align: center;
-	font-family: "proxima-nova", sans-serif;
-    font-weight: bold;
-	font-size: 3em;
-	margin: 0em;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 0;
 }
 
 h2 {
-	font-size: 2em;
+    font-size: 1.5em;
+}
+
+h3, h4, h5, h6 {
+    font-size: 1em;
 }
 
 .org {
-	display: flex;
-	align-items: center;
-	padding: 1em 0;
+    display: flex;
+    align-items: center;
+    padding-bottom: 1em;
 }
 
 .org-content > *,
@@ -48,15 +52,44 @@ h2 {
 	padding: 10px;
 }
 
-.org-skill-term {
-	color: white;
-	background-color: #337ab7;
-	font-size: 90%;
-	margin: 2px;
-	padding: 3px 6px;
+.org-skill-row,
+.org-skill-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin: .25em;
+ }
+
+.org-skill-badge {
+    color: white;
+    background-color: #57b1f9;
+    padding: 0 .5em;
 }
 
-/* Colors for skill time badges */
-.time-high  { background-color: #5cb85c; }
-.time-medium { background-color: #337ab7; }
-.time-low   { background-color: #f0ad4e; }
+.org-skill-clock {
+    display: flex;
+    align-items: center;
+    margin: 0 3px;
+}
+
+.org-skill-clock > svg {
+    height: 1.2em;
+    width: 1.2em;
+    display: inline-block;
+}
+
+.clock-high path { fill: #ec7975; }
+.clock-medium path { fill: #e3bb76; }
+.clock-low path { fill: #7cc065 ; }
+
+#org-list-instructions {
+    background: rgba(0, 0, 0, .1);
+    margin-top: 1em;
+    padding: .5em;
+}
+
+#org-list-instructions p {
+    margin: .15em;
+}
