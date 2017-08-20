@@ -53,7 +53,19 @@ function register_organization_post_type() {
 add_action('init', 'register_organization_taxonomies');
 function register_organization_taxonomies() {
     register_taxonomy('issue', 'organization', array(
-        'label'              => 'Issue',
+        'labels'             =>  array(
+            'name'              => 'Issues',
+            'singular_name'     => 'Issue',
+            'search_items'      => 'Search Issues',
+            'all_items'         => 'All Issues',
+            'parent_item'       => 'Parent Issue',
+            'parent_item_colon' => 'Parent Issue: ',
+            'edit_item'         => 'Edit Issue',
+            'update_item'       => 'Update Issue',
+            'add_new_item'      => 'Add New Issue',
+            'new_item_name'     => 'New Issue Name',
+            'menu_name'         => 'Issues',
+        ),
         'rewrite'            => array('slug' => 'issue', 'with_front' => false),
         'hierarchical'       => true,
         'publicly_queryable' => false,
@@ -61,7 +73,19 @@ function register_organization_taxonomies() {
     ));
 
     register_taxonomy('skill', 'organization', array(
-        'label'              => 'Skill',
+        'labels'             =>  array(
+            'name'              => 'Skills',
+            'singular_name'     => 'Skill',
+            'search_items'      => 'Search Skills',
+            'all_items'         => 'All Skills',
+            'parent_item'       => 'Parent Skill',
+            'parent_item_colon' => 'Parent Skill: ',
+            'edit_item'         => 'Edit Skill',
+            'update_item'       => 'Update Skill',
+            'add_new_item'      => 'Add New Skill',
+            'new_item_name'     => 'New Skill Name',
+            'menu_name'         => 'Skills',
+        ),
         'rewrite'            => array('slug' => 'skill', 'with_front' => false),
         'hierarchical'       => false,
         'publicly_queryable' => false,
@@ -69,7 +93,19 @@ function register_organization_taxonomies() {
     ));
 
     register_taxonomy('state', 'organization', array(
-        'label' 			 => 'State',
+        'labels'             =>  array(
+            'name'              => 'States',
+            'singular_name'     => 'State',
+            'search_items'      => 'Search States',
+            'all_items'         => 'All States',
+            'parent_item'       => 'Parent State',
+            'parent_item_colon' => 'Parent State: ',
+            'edit_item'         => 'Edit State',
+            'update_item'       => 'Update State',
+            'add_new_item'      => 'Add New State',
+            'new_item_name'     => 'New State Name',
+            'menu_name'         => 'States',
+        ),
         'rewrite'            => array('slug' => 'state', 'with_front' => false),
         'hierarchical'       => true,
         'query_var'          => true,
