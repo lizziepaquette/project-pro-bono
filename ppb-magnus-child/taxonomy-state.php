@@ -61,6 +61,7 @@ foreach (get_terms('issue') as $term)  {
     <?php
     foreach($groups as $issue=>$orgs) {
         if ($issue == 'Political') continue;
+        if (empty($orgs)) continue;
         echo "<h2>{$issue}</h2>";
         foreach($orgs as $org) {
             set_query_var('org', $org);
