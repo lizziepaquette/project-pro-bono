@@ -25,7 +25,7 @@ function register_organization_post_type() {
         'edit_item'          => 'Edit Organization',
         'view_item'          => 'View Organization',
         'all_items'          => 'All Organizations',
-        'search_items'       => 'Search Testimonials',
+        'search_items'       => 'Search Organizations',
         'not_found'          => 'No organizations found.',
         'not_found_in_trash' => 'No organizations found in Trash.',
     );
