@@ -77,6 +77,34 @@ function register_organization_taxonomies() {
     ));
 }
 
+add_filter('manage_edit-organization_columns', 'edit_organization_columns');
+function edit_organization_columns($columns) {
+    return array(
+        'cb'    => '<input type="checkbox" />',
+        'title' => 'Organization',
+        'state' => 'State',
+        'issue' => 'Issue',
+        'skill' => 'Skills',
+        'date'  => 'Date'
+    );
+}
+
+add_action('manage_organization_posts_custom_column', 'manage_organization_columns', 10, 2);
+function manage_organization_columns($column, $post_id) {
+    switch ($column) {
+        case 'state':
+        case 'issue':
+        case 'skill':
+            $terms = wp_get_post_terms($post_id, $column, array('orderby' => 'name'));
+            $names = array();
+            foreach($terms as $term) {
+                $names[] = $term->name;
+            }
+            echo join(', ', $names);
+            break;
+    };
+}
+
 register_activation_hook(__FILE__, 'my_flush_rewrite');
 function my_flush_rewrite() {
     register_organization_post_type();
