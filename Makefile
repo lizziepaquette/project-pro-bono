@@ -1,14 +1,21 @@
+THEME = ppb-quotidian
+PLUGIN = ppb-orgs
+
 default: theme plugin
 
 plugin:
-	zip -r ppb-orgs.zip ppb-orgs
+	zip -r $(PLUGIN).zip $(PLUGIN)
 
 theme:
-	zip -r ppb-magnus-child.zip ppb-magnus-child
+	sass $(THEME)/assets/scss/style.scss $(THEME)/style.css
+	zip -r $(THEME).zip $(THEME)
+
+theme-watch:
+	sass --watch $(THEME)/assets/scss/:$(THEME)/
 
 clean:
-	rm -f ppb-magnus-child.zip
-	rm -f ppb-orgs.zip
+	rm -f $(THEME).zip
+	rm -f $(PLUGIN).zip
 
 time:
 	cat worklog.md | cut -s -d '|' -f 3 | tail -n +3 \

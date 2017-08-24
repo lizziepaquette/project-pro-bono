@@ -1,0 +1,446 @@
+/*!
+Theme Name: PPB Quotidian
+Author: Rahul Gosain
+Description: A responsive, text-focused theme with sensible defaults, PPB's colors and support for the extra pages and structure created by the PPB Organization Listing plugin.
+Version: 1.0
+*/
+
+@import 'partials/colors';
+@import 'partials/flex';
+@import 'partials/size';
+
+/*
+Table of Contents
+
+# Typography
+# Colors
+# Spacing
+# Template Structure
+    ## Navigation Masthead
+    ## Frontpage Hero
+    ## Content Section
+    ## Footer
+# Components
+    ## Full-Width Video
+    ## Inset
+    ## Map
+    ## Organization
+    ## Skill
+*/
+
+/* ! # Typography */
+
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+html {
+    font-family: Karla, serif;
+    // This sets the size of the rem unit used elsewhere.
+    // 1rem = 10px, 1.6rem = 16px and so on.
+    font-size: 10px;
+}
+
+#masthead, header, h1, h2, h3, h4, h5, h6 {
+    font-family: Montserrat, Helvetica, sans-serif;
+}
+
+body {
+    font-size: 2rem;
+    line-height: 2.4rem;
+}
+
+@media (min-width: $large) {
+    font-size: 2.4rem;
+    line-height: 3rem;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h1 { font-size: 4.0rem; line-height: 5.00rem; }
+h2 { font-size: 3.0rem; line-height: 3.75rem; }
+h3 { font-size: 2.4rem; line-height: 3.00rem; }
+h4 { font-size: 1.8rem; line-height: 2.25rem; }
+
+header {
+    text-align: center;
+
+    .subheading {
+        font-size: 2.5rem;
+        line-height: 3.125rem;
+    }
+}
+
+button,
+form button,
+form input[type="button"],
+form input[type="reset"],
+form input[type="submit"],
+button[type="submit"] {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ! # Colors */
+
+::selection {
+    background: $primary-orange;
+    color: $text-light;
+    text-shadow: 0 1px 1px $highlight-shadow;
+}
+
+html {
+    background-color: $background;
+    color: $text-dark;
+}
+
+a {
+    color: $primary-orange;
+    &:visited { color: $primary-orange; }
+    &:hover   { color: $text-dark; }
+}
+
+/* ! # Spacing */
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+blockquote, dl, figure, form, p, pre, section, table {
+    margin-bottom: 2rem;
+}
+
+img {
+    // Fit to container
+    max-height: 100%;
+    max-width: 100%;
+}
+
+img.aligncenter {
+    margin: auto;
+    display: block;
+}
+
+button,
+form button,
+form input[type="button"],
+form input[type="reset"],
+form input[type="submit"],
+button[type="submit"] {
+    background: $primary-orange;
+    color: $text-light;
+
+    border: 0;
+    border-radius: 3px;
+    // padding: 0.8573333333em 1.286em;
+
+    &:hover {
+        background: lighten($primary-orange, 5%);
+    }
+
+    &:active {
+        background: darken($primary-orange, 5%);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+/* ! # Template Structure */
+/* ! ## Navigation Masthead */
+
+#masthead {
+    background-color: $masthead;
+    color: $text-light;
+    padding: 1rem;
+    text-align: left;
+    color: $text-light;
+    text-decoration: none;
+
+    #title  { font-size: 2rem; }
+    #tagline { font-size: 1rem; }
+}
+
+#masthead-logo {
+    max-height: 8rem;
+    max-width: 8rem;
+    padding-right: 1rem;
+    line-height: 0
+}
+
+#masthead-core {
+    @include flex-row;
+
+    a {
+        color: $text-light;
+        text-decoration: none;
+    }
+}
+
+#masthead-nav-toggle {
+    margin-left: auto;
+}
+
+#masthead-nav {
+    // creates a double with the #masthead, doesn't look good
+    margin: 1rem;
+    margin-bottom: 0;
+
+    &.closed {
+         display: none;
+    }
+
+    ul {
+        list-style-image: none;
+        list-style-position: outside;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    a {
+        color: $text-grey;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    a:hover {
+        color: $text-light;
+    }
+}
+
+@media (min-width: $medium) {
+    #masthead {
+        // Full height even though the children are both floated
+        overflow: hidden;
+    }
+
+    #masthead-core {
+        float: left;
+    }
+
+    #masthead-nav-toggle {
+        display: none;
+    }
+
+    #masthead-nav {
+        align-items: center;
+        float: right;
+        margin: 0 !important;
+
+        // Ignore open/close
+        &.closed {
+            display: block;
+        }
+
+        ul {
+            // Visually center the row of <li> nav links
+            padding-top: 1.1rem;
+        }
+
+        li {
+            margin-left: 1.5rem;
+            display: inline;
+        }
+    }
+}
+
+/* ! ## Frontpage Hero */
+
+.hero {
+    background-color: #72b9d9;
+    background-image: url(http://projectprobono.com/wp-content/uploads/2016/12/March_on_Washington_-_Reflecting_Pool-blue.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $text-light;
+    overflow: visible;
+    padding: 5% 10%;
+
+    h1 {
+        font-size: 6rem;
+        line-height: 6rem;
+
+        @media (min-width: $large) {
+            font-size: 7rem;
+            line-height: 7rem;
+        }
+    }
+}
+
+/* ! ## Content Section */
+
+section.content {
+    margin: 2rem;
+
+    @media (min-width: $large) {
+        max-width: $large;
+        margin: auto;
+    }
+}
+
+/* ! ## Footer */
+
+footer#colophon {
+    background: $primary-blue;
+    color: $text-light;
+    padding: 1rem;
+    margin: 2.4rem 0 0;
+
+    form {
+        @include flex-row;
+        justify-content: center;
+    }
+}
+
+.mc4wp-form-fields {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (min-width: $medium) {
+        flex-direction: row;
+    }
+}
+
+.mc-form-field {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mc-form-field label {
+    font-size: 16px;
+}
+
+.mc-form-field input {
+    height: 40px;
+}
+
+.mc-form-field input[type="submit"] {
+    margin-top: 26px;
+}
+
+/* ! # Components */
+/* ! ## Full-Width Video */
+
+// Full-width, responsive video embedding hack, see
+// https://alistapart.com/article/creating-intrinsic-ratios-for-video
+section.video {
+    position: relative;
+    padding-top: 25px;
+    padding-bottom: 56.25%;
+    height: 0;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* ! ## Inset */
+
+.inset {
+    background: rgba(0, 0, 0, 0.07);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+
+    // Paragraph margins are visible as darkened in the inset
+    p:first-child { margin-top: 0; }
+    p:last-child  { margin-bottom: 0; }
+}
+
+/* ! ## Map */
+
+#map-container {
+    position: relative;
+    margin: auto;
+    margin-top: 2rem;
+    max-width: 700px;
+
+    #state-name {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        padding-right: 20px;
+    }
+
+    svg {
+        stroke: $text-dark;
+        fill: $primary-blue;
+    }
+}
+
+/* ! ## Organization */
+
+.org {
+    clear: both;
+    margin-bottom: 2rem;
+
+    .org-thumb {
+        // WARNING: This image sizing only works if images do not have hardcoded
+        // width and height attrs, which Wordpress adds by default.
+        // functions.php has a file that removes them.
+        margin-right: 1rem;
+        max-height: 10rem;
+        max-width: 10rem;
+        min-width: 10rem;
+        float: left;
+    }
+
+    // float left above displays text wrapped around the image, but where the
+    // device is big enough, a separate column looks better
+    @media (min-width: $small) {
+        @include flex-row;
+
+        .org-thumb {
+            float: none;
+        }
+    }
+}
+
+/* ! ## Skill */
+
+.skill-row {
+    @include flex-row;
+    flex-wrap: wrap;
+}
+
+.skill {
+    @include flex-row;
+    flex-wrap: nowrap;
+}
+
+// A skill label is just a skill badge without the color: they're otherwise
+// interchangable
+.skill-label,
+.skill-badge {
+    padding: .25rem .5rem;
+    margin: .25rem;
+    margin-right: .5rem;
+}
+
+.skill-badge {
+    color: $text-light;
+    background-color: $primary-blue;
+}
+
+.skill-clock {
+    display: flex;
+    align-items: center;
+    margin-right: .1rem;
+
+    &.high   { color: $clock-high; }
+    &.medium { color: $clock-medium; }
+    &.low    { color: $clock-low; }
+}
