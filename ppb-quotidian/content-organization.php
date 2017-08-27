@@ -3,16 +3,12 @@
 <div class="org-info">
     <h3 class="org-name"><?= the_title(); ?></h3>
     <p>
-        <?php
-        // The content can be multiple paragraphs, only the first matters
-        echo explode("\n", get_the_content())[0];
-        // First paragraph
-        $url = get_post_meta(get_the_ID(), 'learn_more_url', true);
-        if ($url) {
-            $escaped = esc_url($url);
-            echo " <a target='_blank' href={$escaped}>Learn more.</a>";
-        }
-        ?>
+        <?=  // The content can be multiple paragraphs, only the first matters
+        explode("\n", get_the_content())[0]; ?>
+
+        <a href="<?= get_the_permalink(); ?>">
+            More info...
+        </a>
     </p>
 
     <?php if (!is_page_template('page-get-political.php')): ?>

@@ -25,6 +25,7 @@ Table of Contents
     ## Inset
     ## Map
     ## Organization
+        ### Organization Longform Extras
     ## Skill
 */
 
@@ -301,13 +302,8 @@ footer#colophon {
 }
 
 .mc4wp-form-fields {
-    display: flex;
-    flex-direction: column;
+    @include flex-collapsing-on($medium);
     justify-content: center;
-
-    @media (min-width: $medium) {
-        flex-direction: row;
-    }
 }
 
 .mc-form-field {
@@ -387,17 +383,6 @@ section.video {
     clear: both;
     margin-bottom: 2rem;
 
-    .org-thumb {
-        // WARNING: This image sizing only works if images do not have hardcoded
-        // width and height attrs, which Wordpress adds by default.
-        // functions.php has a file that removes them.
-        margin-right: 1rem;
-        max-height: 10rem;
-        max-width: 10rem;
-        min-width: 10rem;
-        float: left;
-    }
-
     // float left above displays text wrapped around the image, but where the
     // device is big enough, a separate column looks better
     @media (min-width: $small) {
@@ -406,6 +391,28 @@ section.video {
         .org-thumb {
             float: none;
         }
+    }
+}
+
+.org-thumb {
+    // WARNING: This image sizing only works if images do not have hardcoded
+    // width and height attrs, which Wordpress adds by default.
+    // functions.php has a file that removes them.
+    margin-right: 1rem;
+    max-height: 10rem;
+    max-width: 10rem;
+    min-width: 10rem;
+    float: left;
+}
+
+/* ! ### Organization Longform Extras */
+
+.org-long-meta {
+    @include flex-collapsing-on($small);
+    align-items: flex-start;
+
+    #location {
+        margin-right: 1rem;
     }
 }
 

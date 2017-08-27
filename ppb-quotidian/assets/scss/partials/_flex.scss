@@ -1,6 +1,17 @@
+@import '_size';
+
 @mixin flex-row {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: flex-start;
+    align-items: center;
+}
+
+@mixin flex-collapsing-on($break-size) {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $break-size) {
+        flex-direction: row;
+    }
 }
