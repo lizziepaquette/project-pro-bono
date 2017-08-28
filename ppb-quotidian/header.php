@@ -1,7 +1,7 @@
 <?php
-/*
+/**
  * Produces the theme header, including the elements of the `navbar-menu` menu
- * that the theme regesters (see functions.php)
+ * that the theme registers (see functions.php)
  */ ?>
 
 <!DOCTYPE html>
@@ -16,8 +16,14 @@
 
 <body>
 <header id="masthead">
+    <?php
+    // The masthead core is everything that's always on the same line:
+    // logo, title, tagline and the navigation toggle. The masthead-nav is only
+    // in the same line on big screens, so it goes in a separate div
+    ?>
     <div id="masthead-core">
         <a id="masthead-logo" href="<?= get_bloginfo('wpurl');?>">
+            <?php // TODO: support theme logo instead of hardcoding this file ?>
             <img src="http://projectprobono.com/wp-content/uploads/2017/02/logo-2.png">
        </a>
 
@@ -36,7 +42,6 @@
             <i class="icon-bars" aria-hidden="true"></i>
         </div>
     </div>
-    <!--  -->
 
     <?php
     wp_nav_menu(array(

@@ -1,9 +1,23 @@
+<?php
+/**
+ * Template for displaying abbreviated information on an organization as part of
+ * a list. While `single-organization.php` displays all the content, this
+ * displays only the first paragraph. In lieu of the longform information there,
+ * it displays skill badges, which contain abbreviated information about what
+ * positions are available and how demanding they are.
+ *
+ * These use a specific naming structure for Skill tags: each term should be of
+ * the form "SkillName[ :: TimeCommitment]". The optional second value is
+ * lowercased and added to the clock container div. The theme supports `high`,
+ * `medium` and `low`, but will add whatever is in the TimeCommitment position.
+ */ ?>
+
 <div class="org">
 <div class="org-thumb"><?= the_post_thumbnail(); ?></div>
 <div class="org-info">
     <h3 class="org-name"><?= the_title(); ?></h3>
     <p>
-        <?=  // The content can be multiple paragraphs, only the first matters
+        <?=  // First paragraph is determined by a newline
         explode("\n", get_the_content())[0]; ?>
 
         <a href="<?= get_the_permalink(); ?>">
@@ -11,17 +25,14 @@
         </a>
     </p>
 
-    <?php if (!is_page_template('page-get-political.php')): ?>
+    <?php
+    // The get political page is structured as a list of *resources for
+    // everyone* - it doesn't make sense to include skill badges here.
+    if (!is_page_template('page-get-political.php')): ?>
     <div class="skill-row">
         <?php foreach (get_the_terms(get_the_ID(), 'skill') as $skill_term): ?>
             <?php
-            /*
-             * $skill_term names are of the form "SkillName[ :: CSSClass]". The
-             * optional second value is lowercased and added as a class to the
-             * clock container div as 'cssclass'. The theme has support for
-             * 'high', 'medium' and 'low' CSS classes.
-             * parts[0] = name, parts[1] = class
-             */
+            //parts[0] = name, parts[1] = class (optional)
             $parts = explode(' :: ', $skill_term->name) ?>
 
             <span class="skill">
