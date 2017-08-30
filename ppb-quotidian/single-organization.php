@@ -14,7 +14,7 @@
 get_header(); ?>
 <section class="content organization singular">
     <?php if (have_posts()): while(have_posts()): the_post(); ?>
-    <h1 class="org-name"><?= the_title(); ?></h3>
+    <h1 class="org-name"><?= the_title(); ?></h1>
     <div class="org-longform">
         <div class="org-thumb">  <?= the_post_thumbnail(); ?> </div>
         <div class="org-long-info">
