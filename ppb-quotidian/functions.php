@@ -33,6 +33,25 @@ function quotidian_state_selector_map_handler() {
     </div>");
 }
 
+// Gets and displays an organization by its slug using the content-organization
+// template part
+add_shortcode('org_description', 'quotidian_org_description_handler');
+function quotidian_org_description_handler($atts) {
+    global $post;
+    $post = get_page_by_path($atts['path'], OBJECT, 'organization');
+    setup_postdata($post);
+
+    // get_template_part doesn't work right here because we return the output
+    // instead of echoing it - use php output buffering instead as described in
+    // https://stackoverflow.com/a/33468179
+    ob_start();
+    get_template_part('content', 'organization');
+    $output = ob_get_clean();
+    wp_reset_postdata();
+
+    return $output;
+}
+
 // Responsive layout doesn't work with fixed image sizes, but Wordpress assigns
 // them by default. Code from here: https://wordpress.stackexchange.com/a/5606
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10);
