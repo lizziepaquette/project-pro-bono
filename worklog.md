@@ -17,3 +17,4 @@ author: Rahul Gosain
 | 2017-08-19 | 110           | Clock system and instructions on listing pages
 | 2017-08-19 | 5             | Make listing links open in new tabs
 | 2017-08-27 | 40            | Make expanded organization pages
+| 2017-09-13 | 30            | Danny's changes (more info link, reorder political)
