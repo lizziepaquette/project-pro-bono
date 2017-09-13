@@ -20,9 +20,13 @@
         <?=  // First paragraph is determined by a newline
         explode("\n", get_the_content())[0]; ?>
 
-        <a href="<?= get_the_permalink(); ?>">
-            More info...
+        <?php
+        $url = get_post_meta(get_the_ID(), 'learn_more_url', true);
+        if ($url): ?>
+        <a href="<?= esc_url($url); ?>">
+            Learn more.
         </a>
+        <?php endif; ?>
     </p>
 
     <?php
