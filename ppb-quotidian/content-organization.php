@@ -32,7 +32,7 @@
     <?php
     // The get political page is structured as a list of *resources for
     // everyone* - it doesn't make sense to include skill badges here.
-    if (!is_page_template('page-get-political.php')): ?>
+    if (!is_page('get-political')): ?>
     <div class="skill-row">
         <?php foreach (get_the_terms(get_the_ID(), 'skill') as $skill_term): ?>
             <?php
