@@ -20,15 +20,19 @@
         <?=  // First paragraph is determined by a newline
         explode("\n", get_the_content())[0]; ?>
 
-        <a href="<?= get_the_permalink(); ?>">
-            More info...
+        <?php
+        $url = get_post_meta(get_the_ID(), 'learn_more_url', true);
+        if ($url): ?>
+        <a href="<?= esc_url($url); ?>">
+            Learn more.
         </a>
+        <?php endif; ?>
     </p>
 
     <?php
     // The get political page is structured as a list of *resources for
     // everyone* - it doesn't make sense to include skill badges here.
-    if (!is_page_template('page-get-political.php')): ?>
+    if (!is_page('get-political')): ?>
     <div class="skill-row">
         <?php foreach (get_the_terms(get_the_ID(), 'skill') as $skill_term): ?>
             <?php
