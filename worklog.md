@@ -19,3 +19,4 @@ author: Rahul Gosain
 | 2017-08-27 | 40            | Make expanded organization pages
 | 2017-09-13 | 30            | Danny's changes (more info link, reorder political)
 | 2017-09-22 | 10            | Fix map on older browsers
+| 2017-09-22 | 5             | Remove MailChimp subscription footer
