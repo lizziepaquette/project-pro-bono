@@ -34,8 +34,6 @@ get_header(); ?>
     </div>
 
     <?php foreach(get_terms('issue') as $issue) {
-        if ($issue->name == 'Political') continue;
-
         $posts = get_posts(array(
             'posts_per_page' => -1,
             'post_type'      => 'organization',
