@@ -212,7 +212,7 @@ button[type="submit"] {
     }
 }
 
-@media (min-width: $medium) {
+@media (min-width: $large) {
     #masthead {
         // Full height even though the children are both floated
         overflow: hidden;
