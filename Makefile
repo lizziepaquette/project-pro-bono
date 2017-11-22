@@ -1,22 +1,21 @@
 THEME = ppb-quotidian
 PLUGIN = ppb-orgs
 
-default: theme plugin
+.PHONY: all watch clean
 
-plugin:
+all: $(PLUGIN).zip $(THEME).zip
+
+$(PLUGIN).zip:
 	zip -r $(PLUGIN).zip $(PLUGIN)
 
-theme:
+$(THEME).zip:
 	sass $(THEME)/assets/scss/style.scss $(THEME)/style.css
 	zip -r $(THEME).zip $(THEME)
 
-theme-watch:
+watch:
 	sass --watch $(THEME)/assets/scss/:$(THEME)/
 
 clean:
-	rm -f $(THEME).zip
-	rm -f $(PLUGIN).zip
-
-time:
-	cat worklog.md | cut -s -d '|' -f 3 | tail -n +3 \
-	| awk '{ sum+=$$1} END {print sum}'
+	rm -rf $(THEME).zip
+	rm -rf $(PLUGIN).zip
+	rm -rf .sass-cache
