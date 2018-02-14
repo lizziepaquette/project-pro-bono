@@ -1,0 +1,45 @@
+<!--This currently lives in the additional CSS section on the main page. Would be good to add it to the theme eventually-->
+<style>
+.issues {
+	text-align: center
+}
+
+.issue_button {
+	padding: 10px;
+  display: inline-block;
+  margin: 10px;
+}
+
+.issue_button button {
+	width: 200px;
+	height: 100px;
+	font-size: 18px;
+}
+</style>
+
+
+<div class="issues">
+
+<div>
+	<a class="issue_button" href="http://projectprobono.com/civil-rights/"><button>Civil Rights</button></a>
+	<a class="issue_button" href="http://projectprobono.com/criminal-justice/"><button>Criminal Justice</button></a>
+	<a class="issue_button" href="http://projectprobono.com/education/"><button>Education</button></a>
+
+</div>
+<div>
+
+	<a class="issue_button" href="http://projectprobono.com/environment/"><button>Environment</button></a>
+	<a class="issue_button" href="http://projectprobono.com/housing/"><button>Housing</button></a>
+
+
+	<a class="issue_button" href="http://projectprobono.com/immigration/"><button>Immigration</button></a>
+</div>
+<div>
+
+	<a class="issue_button" href="http://projectprobono.com/lgbtqia-rights/"><button>LGBTQIA Rights</button></a>
+	<a class="issue_button" href="http://projectprobono.com/voting-rights/"><button>Voting Rights</button></a>
+	<a class="issue_button" href="http://projectprobono.com/womens-rights-and-reproductive-health/"><button> Women's Rights</button></a>
+
+</div>
+</div>
+
